@@ -59,12 +59,12 @@ main {
 }
 
 .logo svg {
-    transform: rotate(0deg);
+    transform: rotateY(0deg);
     transition: transform 600ms ease;
 }
 
 .navbar:hover .logo svg {
-    transform: rotate(-180deg);
+    transform: rotateY(-180deg) translateX(-3.25rem);
 }
 
 .nav-item {
@@ -159,6 +159,5 @@ main {
     .navbar:hover .link-text {
         display: inline;
         transition: opacity 600ms ease;
-        cursor: pointer;
     }
 }
