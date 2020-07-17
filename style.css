@@ -123,7 +123,7 @@ body::-webkit-scrollbar-thumb {
     transition: var(--transition-speed);
 }
 
-.active {
+.selected {
     filter: grayscale(0%) opacity(1);
     background: var(--bg-secondary);
 }

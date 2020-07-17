@@ -16,7 +16,7 @@
             var path = new Path.Circle({
                 center: [0, 0],
                 radius: 10,
-                fillColor: 'white',
+                fillColor: 'black',
                 strokeColor: 'grey'
             });
             
@@ -35,7 +35,7 @@
                 var maxPoint  = new Point(view.size.width, 0);
                 var randomPoint = Point.random();
                 var point = maxPoint * randomPoint;
-                point.y = view.size.height +5;
+                point.y = view.size.height + 5;
 
                 // Run through the active layer's children list and change
                 // the position of the placed symbols:
@@ -44,7 +44,7 @@
 
                     // Move the item 1/20th of its width to the right. This way
                     // larger circles move faster than smaller circles:
-                    item.position.y -= item.bounds.width / 40;
+                    item.position.y -= item.bounds.width / 50;
             
                     // If the item has left the view on the right, move it back
                     // to the left:
@@ -194,18 +194,7 @@
         </nav>
 
         <div class="main">
-            <div class="welcome">
-                <div class="welcome-text">
-                    <h1 class="welcome-heading">
-                        Emanuel Flores,<br>
-                        Freelance Web Developer
-                    </h1>
-                    <p class="welcome-info">
-                        Hello. I design stuff and build things on the internet.
-                    </p>
-                </div>
-            </div>
-            
+            <h1>this is the work page...</h1>
         </div>
     </div>  
     
