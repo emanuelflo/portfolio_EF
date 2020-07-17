@@ -8,17 +8,17 @@ const varArr = [home, work, about];
 
 for (let i = 0; i < varArr.length; i++) {
     varArr[i].addEventListener('click', (link) => {
-        if (link.srcElement.innerText === 'HOME') {
+        if (link.srcElement.innerText === 'HOME' || link.path[1].id === 'home_page') {
             fadeOut();
             setTimeout(function() {
                 linkOut('index.html');
             }, 1000);
-        } else if (link.srcElement.innerText === 'WORK') {
+        } else if (link.srcElement.innerText === 'WORK' || link.path[1].id === 'work_page') {
             fadeOut();
             setTimeout(function() {
                 linkOut('work.html');
             }, 1000);
-        } else if (link.srcElement.innerText === 'ABOUT') {
+        } else if (link.srcElement.innerText === 'ABOUT'|| link.path[1].id === 'about_page') {
             fadeOut();
             setTimeout(function() {
                 linkOut('about.html');
@@ -28,8 +28,8 @@ for (let i = 0; i < varArr.length; i++) {
 }
 
 const fadeOut = () => {
-    fade.classList.remove('animated', 'fadeIn');
-    fade.classList.add('animated', 'fadeOut');
+    fade.classList.remove('fadeIn');
+    fade.classList.add('fadeOut');
 }
 
 function linkOut(page) {
