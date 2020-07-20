@@ -1,5 +1,7 @@
 const fade = document.querySelector('.animated');
 const varArr = document.querySelectorAll('.nav-item');
+const expander = document.querySelectorAll('.expander');
+const shared = document.querySelectorAll('.shared');
 
 for (let i = 0; i < varArr.length; i++) {
     varArr[i].addEventListener('click', () => {
@@ -13,10 +15,23 @@ for (let i = 0; i < varArr.length; i++) {
     })
 }
 
-const combine = (x) => {
+for (let i = 0; i < expander.length; i++) {
+    expander[i].addEventListener('click', () => {
+        if (expander[i] === expander[0]) {
+            shared[0].classList.add('add-height');
+            expander[i].classList.add('arrows');
+        } else if (expander[i] === expander[1]) {
+            console.log('second');
+        } else if (expander[i] === expander[2]) {
+            console.log('third');
+        }
+    })
+}
+
+const combine = (file) => {
     fadeOut();
     setTimeout(() => {
-        linkOut(x);
+        linkOut(file);
     }, 1000);
 }
 

@@ -12,7 +12,7 @@ canvas[resize] {
 
 :root {
     font-size: 16px;
-    font-family: 'Abel', sans-serif;
+    font-family: 'Yantramanav', sans-serif;
     --text-primary: #b6b6b6;
     --text-secondary: white;
     --bg-primary: #23232e;
@@ -42,6 +42,75 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* WORK PAGE STYLING */
+.main-work {
+    height: 100%;
+}
+
+.horizontal-bars {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    border: 2px solid green;
+    overflow-x: hidden;
+}
+
+.left-bars {
+    height: 12rem;
+    overflow: hidden;
+    animation: fromLeftAnimate 2.5s ease-in-out;
+    background-color: purple;
+    margin-bottom: 2rem;
+    transition: height 500ms ease-in-out;
+    
+}
+
+.right-bars {
+    height: 12rem;
+    overflow: hidden;
+    animation: fromRightAnimate 2.5s ease-in-out;
+    background-color: purple;
+    margin-bottom: 2rem;
+}
+
+.right-bars svg, .left-bars svg {
+    display: block;
+    width: 5rem;
+    margin: -2rem auto 3rem auto;
+}
+
+.left-bars h2, .right-bars h2 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.hidden {
+    height: 0%;
+    width: 0%;
+}
+
+.add-height {
+    height: 20rem;
+}
+
+.expander {
+    transform: rotateX(0deg);
+    transition: transform 2s ease;
+}
+
+.arrows {
+    transform: rotateX(180deg);
+}
+
+@keyframes fromLeftAnimate {
+    from {margin-right: 100%;}
+    to {margin-right: 0%;}
+}
+
+@keyframes fromRightAnimate {
+    from {margin-left: 100%;}
+    to {margin-left: 0%;}
 }
 
 /* START OF NAV STYLING */
@@ -131,12 +200,32 @@ body::-webkit-scrollbar-thumb {
 /* END OF NAV STYLING */
 .welcome-heading, .welcome-info {
     text-align: left;
+}
+
+.welcome-heading {
     color: teal;
+}
+
+.welcome-info {
+    color: grey;
+    font-size: 1.25rem;
 }
 
 .nav-link svg.teal-color {
     fill: teal;
 }
+
+.welcome-text {
+    background-color: rgba(255,255,255,0.9);
+    border: 1px solid teal;
+    padding: 0 2rem 1rem 2rem;
+}
+
+#welcome {
+    color: black;
+}
+
+
 
 /* FADE OUT & FADE IN ANIMATIONS */
 .animated {
@@ -176,6 +265,11 @@ body::-webkit-scrollbar-thumb {
 
 /* SMALL SCREENS */
 @media only screen and (max-width: 600px) {
+    .main {
+        height: calc(100vh - 5rem);
+        margin-bottom: 5rem;
+    }
+
     .navbar {
         bottom: 0;
         width: 100vw;
@@ -192,6 +286,12 @@ body::-webkit-scrollbar-thumb {
 
     .nav-link {
         justify-content: center;
+    }
+
+    .welcome-text {
+        padding: 0 1.5rem 1rem 1.5rem;
+        margin-bottom: 5rem;
+
     }
 }
 
