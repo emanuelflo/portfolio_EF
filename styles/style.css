@@ -57,19 +57,19 @@ body::-webkit-scrollbar-thumb {
 }
 
 .left-bars {
-    height: 12rem;
+    height: 100%;
     overflow: hidden;
-    animation: fromLeftAnimate 2.5s ease-in-out;
+    animation: fromLeftAnimate 1.25s ease-in-out;
     background-color: purple;
     margin-bottom: 2rem;
-    transition: height 500ms ease-in-out;
+    
     
 }
 
 .right-bars {
     height: 12rem;
     overflow: hidden;
-    animation: fromRightAnimate 2.5s ease-in-out;
+    animation: fromRightAnimate 1.25s ease-in-out;
     background-color: purple;
     margin-bottom: 2rem;
 }
@@ -85,18 +85,27 @@ body::-webkit-scrollbar-thumb {
     font-size: 3rem;
 }
 
-.hidden {
-    height: 0%;
-    width: 0%;
+.box {
+    width: 2rem;
+    height: 10rem;
+    background-color: red;
 }
 
-.add-height {
-    height: 20rem;
+.hidden {
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    transition: height 250ms ease-in-out;
+}
+
+.show {
+    height: 15rem;
+    
 }
 
 .expander {
     transform: rotateX(0deg);
-    transition: transform 2s ease;
+    transition: transform .5s ease;
 }
 
 .arrows {
@@ -119,6 +128,7 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--bg-primary);
     transition: width 800ms ease, height 800ms ease;
     overflow: auto;
+    z-index: 1;
 }
 
 .navbar-nav {

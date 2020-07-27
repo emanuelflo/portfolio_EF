@@ -2,6 +2,7 @@ const fade = document.querySelector('.animated');
 const varArr = document.querySelectorAll('.nav-item');
 const expander = document.querySelectorAll('.expander');
 const shared = document.querySelectorAll('.shared');
+const hidden = document.querySelectorAll('.hidden');
 
 for (let i = 0; i < varArr.length; i++) {
     varArr[i].addEventListener('click', () => {
@@ -18,8 +19,8 @@ for (let i = 0; i < varArr.length; i++) {
 for (let i = 0; i < expander.length; i++) {
     expander[i].addEventListener('click', () => {
         if (expander[i] === expander[0]) {
-            shared[0].classList.add('add-height');
-            expander[i].classList.add('arrows');
+            expander[i].classList.toggle('arrows');
+            hidden[i].classList.toggle('show');
         } else if (expander[i] === expander[1]) {
             console.log('second');
         } else if (expander[i] === expander[2]) {
