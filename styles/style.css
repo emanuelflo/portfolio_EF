@@ -7,12 +7,12 @@ canvas[resize] {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: -2;
 }
 
 :root {
     font-size: 16px;
-    font-family: 'Yantramanav', sans-serif;
+    font-family: 'Oswald', sans-serif;
     --text-primary: #b6b6b6;
     --text-secondary: white;
     --bg-primary: #23232e;
@@ -23,6 +23,7 @@ body {
     background: white;
     margin: 0;
     padding: 0;
+    font-weight: 200;
 }
 
 body::-webkit-scrollbar {
@@ -37,6 +38,14 @@ body::-webkit-scrollbar-thumb {
     background: teal;
 }
 
+h1, h2 {
+    font-weight: 200;
+}
+
+h3 {
+    font-weight: 300;
+}
+
 .main {
     height: 100vh;
     display: flex;
@@ -45,14 +54,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* WORK PAGE STYLING */
-.main-work {
+.main-work, .main-about {
     height: 100%;
+    margin-top: 2rem;
 }
 
 .horizontal-bars {
-    margin-top: 6rem;
     margin-bottom: 6rem;
-    border: 2px solid green;
     overflow-x: hidden;
 }
 
@@ -60,47 +68,57 @@ body::-webkit-scrollbar-thumb {
     height: 100%;
     overflow: hidden;
     animation: fromLeftAnimate 1.25s ease-in-out;
-    background-color: purple;
-    margin-bottom: 2rem;
-    
-    
 }
 
 .right-bars {
-    height: 12rem;
+    height: 100%;
     overflow: hidden;
     animation: fromRightAnimate 1.25s ease-in-out;
-    background-color: purple;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
 .right-bars svg, .left-bars svg {
     display: block;
     width: 5rem;
-    margin: -2rem auto 3rem auto;
+    margin: 1rem auto;
+}
+
+.arrow-color {
+    fill: white;
+}
+ 
+div.shared svg {
+    transition: 400ms ease;
+}
+
+.arrow-color:hover {
+    fill: black;
 }
 
 .left-bars h2, .right-bars h2 {
     text-align: center;
-    font-size: 3rem;
-}
-
-.box {
-    width: 2rem;
-    height: 10rem;
-    background-color: red;
+    color: white;
 }
 
 .hidden {
     height: 0;
-    display: flex;
-    flex-direction: column;
-    transition: height 250ms ease-in-out;
+    opacity: 0;
+    display: block;
+    transition: height 500ms ease-in-out, opacity 400ms ease-in;
 }
 
 .show {
-    height: 15rem;
-    
+    opacity: 1;
+    height: 100%;
+    /* margin: 0 auto; */
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
 }
 
 .expander {
@@ -111,6 +129,35 @@ body::-webkit-scrollbar-thumb {
 .arrows {
     transform: rotateX(180deg);
 }
+
+.shared {
+    background-color: rgba(0, 128, 128, 0.9);
+}
+
+.text-card a {
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    width: 10rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    background: black;
+    border: 1px solid white;
+    color: white;
+    transition: background 500ms ease, color 500ms ease, border 100ms ease;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
+
+
 
 @keyframes fromLeftAnimate {
     from {margin-right: 100%;}
@@ -128,7 +175,7 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--bg-primary);
     transition: width 800ms ease, height 800ms ease;
     overflow: auto;
-    z-index: 1;
+    z-index: 2;
 }
 
 .navbar-nav {
@@ -138,6 +185,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
 }
 
 .logo {
@@ -151,7 +199,7 @@ body::-webkit-scrollbar-thumb {
     transition: transform 600ms ease;
 }
 
-.navbar:hover .logo svg {
+.hover:hover .logo svg {
     transform: translateX(3.25rem) rotateY(0deg);
 }
 
@@ -235,7 +283,63 @@ body::-webkit-scrollbar-thumb {
     color: black;
 }
 
+.title h1 {
+    font-size: 3rem;
+    text-align: left;
+    width: 30%;
+    margin: 2rem auto 2rem 2rem;
+    color: black;
+    padding: 0.5rem 1.5rem;
+}
 
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
 
 /* FADE OUT & FADE IN ANIMATIONS */
 .animated {
@@ -299,10 +403,42 @@ body::-webkit-scrollbar-thumb {
     }
 
     .welcome-text {
-        padding: 0 1.5rem 1rem 1.5rem;
+        padding: 0 0.35rem 1rem 0.35rem;
         margin-bottom: 5rem;
-
     }
+
+    .horizontal-bars {
+        margin-bottom: 8rem;
+    }
+
+    .horizontal-bars h2 {
+        font-size: 2rem;
+    }
+
+    .card {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .design-image {
+        width: 92%;
+        background: white;
+        padding: 3rem 1rem;
+    }
+
+    .card img {
+        width: 60%;
+        margin: 0 20%;
+        background: white;
+    }
+
+    .text-card {
+        text-align: left;
+        background: rgb(244, 244, 244);
+        width: 92%;
+        padding: 0 1rem;
+    }
+
 }
 
 /* LARGE SCREENS */
@@ -322,7 +458,7 @@ body::-webkit-scrollbar-thumb {
         height: 5rem;
     }
 
-    .navbar:hover {
+    .hover:hover {
         width: 12rem;
         height: 100vh;
     }
@@ -330,5 +466,30 @@ body::-webkit-scrollbar-thumb {
     .navbar:hover .link-text {
         display: inline;
         transition: opacity 600ms ease;
+    }
+
+    .horizontal-bars h2 {
+        font-size: 2.5rem;
+    }
+
+    .card {
+        flex-direction: row;
+        justify-content: flex-start;
+        height: auto;
+    }
+
+    .card img {
+        height: 15rem;
+        background: white;
+        padding: 3rem;
+        margin-bottom: -5px;
+    }
+
+    .text-card {
+        text-align: left;
+        background: rgb(244, 244, 244);
+        width: 100%;
+        padding-left: 1.5rem;
+        padding-right: 1rem;
     }
 }

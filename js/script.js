@@ -1,8 +1,9 @@
 const fade = document.querySelector('.animated');
 const varArr = document.querySelectorAll('.nav-item');
 const expander = document.querySelectorAll('.expander');
-const shared = document.querySelectorAll('.shared');
 const hidden = document.querySelectorAll('.hidden');
+const modal = document.querySelector("#myModal");
+const navBar = document.querySelector(".navbar");
 
 for (let i = 0; i < varArr.length; i++) {
     varArr[i].addEventListener('click', () => {
@@ -19,12 +20,9 @@ for (let i = 0; i < varArr.length; i++) {
 for (let i = 0; i < expander.length; i++) {
     expander[i].addEventListener('click', () => {
         if (expander[i] === expander[0]) {
-            expander[i].classList.toggle('arrows');
-            hidden[i].classList.toggle('show');
+            workDropDowns(i);
         } else if (expander[i] === expander[1]) {
-            console.log('second');
-        } else if (expander[i] === expander[2]) {
-            console.log('third');
+            workDropDowns(i);
         }
     })
 }
@@ -37,10 +35,24 @@ const combine = (file) => {
 }
 
 const fadeOut = () => {
+    navBar.classList.remove('hover');
     fade.classList.remove('fadeIn');
     fade.classList.add('fadeOut');
 }
 
 const linkOut = (page) => {
-    window.location.href = "file:///Users/EmanuelFlores/Desktop/Portfolio%20Site%20v2/portfolio_EF/" + page;
+    document.location.href = "file:///Users/EmanuelFlores/Desktop/Portfolio Site v2/portfolio_EF/" + page;
+}
+
+const workDropDowns = (i) => {
+    expander[i].classList.toggle('arrows');
+    hidden[i].classList.toggle('show');
+}
+
+const openModal = () => {
+    modal.style.display = "block";
+}
+
+const closeModal = () => {
+    modal.style.display = "none";
 }
