@@ -35,7 +35,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: teal;
+    background: rgb(201, 30, 98);
 }
 
 h1, h2 {
