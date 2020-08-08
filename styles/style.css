@@ -292,9 +292,55 @@ div.shared svg {
     padding: 0.5rem 1.5rem;
 }
 
+.main-about {
+    height: 100%;
+    margin-top: 2rem;
+    padding-bottom: 8rem;
+}
+
 .gap {
     display: block;
     height: 3rem;
+}
+
+.about-text {
+    padding: 4rem 0;
+}
+
+.about-text p {
+    font-size: 1.5rem;
+    width: 85%;
+    margin: auto;
+    padding: 1rem;
+    background: white;
+}
+
+.shadow {
+    text-shadow: 2px 2px teal;
+}
+
+.box-shadow {
+    box-shadow: 6px 9px 10px rgb(50, 49, 49);
+}
+
+.about-link {
+    cursor: pointer;
+    color: teal;
+    transition: color 200ms ease;
+}
+
+.about-link:hover {
+    color: grey;
+}
+
+p.box-shadow span a {
+    text-decoration: none;
+    color: teal;
+    transition: color 200ms ease;
+}
+
+p.box-shadow span a:hover {
+    color: grey;
 }
 
 /* The Modal (background) */
