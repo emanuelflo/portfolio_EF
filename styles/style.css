@@ -149,6 +149,7 @@ div.shared svg {
     transition: background 500ms ease, color 500ms ease, border 100ms ease;
     margin-bottom: 1.5rem;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 .button:hover {
@@ -257,7 +258,10 @@ div.shared svg {
 
 /* END OF NAV STYLING */
 .welcome-heading, .welcome-info {
+    display: block;
     text-align: left;
+    width: 95%;
+    margin: 1rem auto;
 }
 
 .welcome-heading {
@@ -267,6 +271,7 @@ div.shared svg {
 .welcome-info {
     color: grey;
     font-size: 1.25rem;
+    margin-top: -1rem;
 }
 
 .nav-link svg.teal-color {
@@ -437,7 +442,7 @@ p.box-shadow span a:hover {
  }
 
 /* SMALL SCREENS */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 720px) {
     .main {
         height: calc(100vh - 5rem);
         margin-bottom: 5rem;
@@ -464,6 +469,10 @@ p.box-shadow span a:hover {
     .welcome-text {
         padding: 0 0.35rem 1rem 0.35rem;
         margin-bottom: 5rem;
+    }
+
+    .welcome-heading {
+        line-height: 2.75rem;
     }
 
     .horizontal-bars {
@@ -514,13 +523,21 @@ p.box-shadow span a:hover {
 }
 
 /* LARGE SCREENS */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 720px) {
     .main {
         width: 100%;
     }
 
     .welcome-heading {
         font-size: 3rem;
+    }
+
+    .welcome {
+        min-width: 455px;
+    }
+
+    .welcome-heading {
+        line-height: 3.75rem;
     }
 
     .navbar {
