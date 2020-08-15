@@ -28,5 +28,5 @@ const fadeOut = () => {
 }
 
 const linkOut = (page) => {
-    document.location.href = "file:///Users/EmanuelFlores/Desktop/Portfolio%20Site%20v2/portfolio_EF/" + page;
+    document.location.href = "https://www.emanuelflores.com/" + page;
 }
